@@ -1,4 +1,4 @@
-#Подтвердить неявку сотрудника по заявке на биржу
+#Подтвердить выход сотрудника по заявке на биржу
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -17,7 +17,7 @@ try:
 
     #Ввод логина
     input1 = browser.find_element(By.ID, "id_username")
-    input1.send_keys("andrew")
+    input1.send_keys("andrew2")
 
     #Ввод пароля
     input2 = browser.find_element(By.ID, "id_password")
@@ -38,16 +38,16 @@ try:
     #переходим на новое окно
     browser.switch_to.window(browser.window_handles[1])
 
-    #нажимаем на кнопку сотрудник не явился
-    browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
+    #нажимаем на кнопку подтвердить выход
+    browser.find_element(By.CLASS_NAME, "btn.btn-success").click()
     
-    #нажимаем еще раз подтвердить неявку
-    browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
+    #нажимаем еще раз подтвердить выход
+    browser.find_element(By.CLASS_NAME, "btn.btn-info").click()
     
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Подтверждение неявки по заявки на биржу не произошло")
+    funciones.agregar_archivo("test.txt", "\n0 Подтверждение выхода по заявки на биржу не произошло")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Подтверждение неявки по заявки на биржу произошло")
+    funciones.agregar_archivo("test.txt", "\n1 Подтверждение выхода по заявки на биржу произошло")
     
     

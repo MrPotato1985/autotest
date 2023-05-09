@@ -1,4 +1,4 @@
-#Отмена заявки на биржу
+#Отмена отклика с биржы
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -29,25 +29,23 @@ try:
 
     #Нажимаем на биржу смен
     browser.find_element(By.CLASS_NAME, "glyphicon.glyphicon-sort").click()
-    #Нажимаем на Заявки на биржу
-    browser.find_element(By.LINK_TEXT, "Заявки на Биржу").click()
+    #Нажимаем на отлики по заявкам
+    browser.find_element(By.LINK_TEXT, "Отклики на заявки в Бирже").click()
 
-    #нажимаем на одну из заявок
-    browser.find_element(By.XPATH, "//a[contains(@href, '/admin/shiftexch/shiftexchrequest/') and contains(@href, '/change')]").click()
+    #нажимаем на один из откликов
+    browser.find_element(By.XPATH, "//a[contains(@href, '/admin/shiftexch/shiftexchrespond/') and contains(@href, '/change')]").click()
 
     #переходим на новое окно
     browser.switch_to.window(browser.window_handles[1])
 
-    #Нажимаем на кнопку отменить отклик
+    #нажимаем на кнопку отменить отклик
     browser.find_element(By.CLASS_NAME, "btn.btn-error").click()
-
-    #Нажимаем на кнопку подтверждения отмены "Да я уверен"
+    
+    #Подтверждаем отмену
     browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
-
-    #Если отмена успешена пишем это в файл и наоборот. Смотрю по появлению алерта что отклик добавлен
-
+    
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Отмена заявки на биржу не произошла")
+    funciones.agregar_archivo("test.txt", "\n0 Отмена отклика на биржу не произошло")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Отмена заявки на биржу успешно произошла")
+    funciones.agregar_archivo("test.txt", "\n1 Отмена отклика на биржу произошло")

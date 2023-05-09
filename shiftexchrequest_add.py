@@ -17,7 +17,7 @@ try:
 
     #Ввод логина
     input1 = browser.find_element(By.ID, "id_username")
-    input1.send_keys("andrew")
+    input1.send_keys("andrew2")
 
     #Ввод пароля
     input2 = browser.find_element(By.ID, "id_password")
@@ -55,7 +55,7 @@ try:
     #Добавляем дату начала заявки
 
     now = datetime.datetime.now()
-    tomorrow = now + datetime.timedelta(days=1)
+    tomorrow = now + datetime.timedelta(days=2)
     browser.find_element(By.ID, "id_start_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
     #Добавляем время начала заявки
@@ -65,7 +65,7 @@ try:
     #Добавляем дату окончания заявки
 
     now = datetime.datetime.now()
-    tomorrow = now + datetime.timedelta(days=1)
+    tomorrow = now + datetime.timedelta(days=2)
     browser.find_element(By.ID, "id_end_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
     #Добавляем время окончания заявки

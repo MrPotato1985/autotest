@@ -18,7 +18,7 @@ try:
 
     #Ввод логина
     input1 = browser.find_element(By.ID, "id_username")
-    input1.send_keys("andrew")
+    input1.send_keys("andrew2")
 
     #Ввод пароля
     input2 = browser.find_element(By.ID, "id_password")
