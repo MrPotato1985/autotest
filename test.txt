@@ -1,0 +1,7 @@
+
+1 Удаление заявки на биржу произошло shiftexchrequest_delete.py
+1 Отмена заявки на биржу успешно произошла shiftexchrequest_cancel_request.py
+0 Заявка на биржу не создана shiftexchrequest_import.py
+0 Заявка на биржу не создана shiftexchrequest_import.py
+0 Импорт не произошел shiftexchrequest_import.py
+1 Импорт произошел shiftexchrequest_import.py
