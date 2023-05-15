@@ -1,5 +1,4 @@
-#Удаление отклика с биржы
-
+#Удаление режима работы
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import datetime
@@ -27,19 +26,19 @@ try:
     button = browser.find_element(By.CSS_SELECTOR, ".btn.btn-info")
     button.click()
 
-    #Нажимаем на биржу смен
-    browser.find_element(By.CLASS_NAME, "glyphicon.glyphicon-sort").click()
-    
-    #Нажимаем на отлики по заявкам
-    browser.find_element(By.LINK_TEXT, "Отклики на заявки в Бирже").click()
+    #Нажимаем планирование графиков
+    browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
+     
+    #Нажимаем на режим работы
+    browser.find_element(By.LINK_TEXT, "Режимы работы").click()
 
     #нажимаем на один из откликов
-    browser.find_element(By.XPATH, "//a[contains(@href, '/admin/shiftexch/shiftexchrespond/') and contains(@href, '/change')]").click()
+    browser.find_element(By.XPATH, "//a[contains(@href, '/admin/user/workregime/') and contains(@href, '/change')]").click()
 
     #переходим на новое окно
     browser.switch_to.window(browser.window_handles[1])
 
-    #нажимаем на кнопку удалить отклик
+    #нажимаем на кнопку удалить режим
     browser.find_element(By.CLASS_NAME, "text-error.deletelink").click()
     
     #Подтверждаем удаление
@@ -47,6 +46,6 @@ try:
     
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Удаление отклика на биржу не произошло")
+    funciones.agregar_archivo("test.txt", "\n0 Режим работы не удалился")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Удаление отклика на биржу произошло")
+    funciones.agregar_archivo("test.txt", "\n1 Режим работы удалился")

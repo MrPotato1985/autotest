@@ -17,4 +17,13 @@ subprocess.run(["python", "shiftexchrequest_create_respond.py"]) #отклик �
 subprocess.run(["python", "shiftexchrespond_change_user.py"]) #Изменение пользователя в отклике
 subprocess.run(["python", "agencyoutsource_add.py"]) #Добавление аутсорс агенства
 subprocess.run(["python", "agencyoutsource_delete.py"]) #Удаление аутсорс агенства
+subprocess.run(["python", "workregime_add.py"]) #Добавление режима работы
+subprocess.run(["python", "workregime_delete.py"]) #Удаление режима работы
+subprocess.run(["python", "workerday_add.py"]) #Добавление календаря по режимам работы
+subprocess.run(["python", "workerday_import.py"]) #Импорт календаря по режимам работы
+subprocess.run(["python", "workplan_add.py"]) #Добавление планирования
+subprocess.run(["python", "workplan_confirm.py"]) #Утверждение планирования
+subprocess.run(["python", "workplan_delete.py"]) #Удаление планирования
+
+
 

@@ -1,0 +1,5 @@
+
+0 Удаление плана не произошло workplan_delete.py
+1 Удаление плана произошло workplan_delete.py
+1 Удаление плана произошло workplan_delete.py
+0 Удаление плана не произошло workplan_delete.py

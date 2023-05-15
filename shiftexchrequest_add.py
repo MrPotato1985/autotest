@@ -47,29 +47,20 @@ try:
     browser.find_element(By.CLASS_NAME, "select2-results__option.select2-results__option--highlighted").click()
 
 
-    #Добавляем должность
-    browser.find_element(By.ID, "select2-id_position-container").click()
-    browser.find_element(By.CLASS_NAME, "select2-search__field").send_keys("Дизайнер")
-    browser.find_element(By.CLASS_NAME, "select2-results__option.select2-results__option--highlighted").click()
-
     #Добавляем дату начала заявки
-
     now = datetime.datetime.now()
     tomorrow = now + datetime.timedelta(days=2)
     browser.find_element(By.ID, "id_start_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
     #Добавляем время начала заявки
-
     browser.find_element(By.ID, "id_start_date_1").send_keys("14:00:00")
 
     #Добавляем дату окончания заявки
-
     now = datetime.datetime.now()
     tomorrow = now + datetime.timedelta(days=2)
     browser.find_element(By.ID, "id_end_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
     #Добавляем время окончания заявки
-
     browser.find_element(By.ID, "id_end_date_1").send_keys("14:30:00")
 
     #Добавляем описания
