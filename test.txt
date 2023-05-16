@@ -1,5 +1,33 @@
 
-0 Удаление плана не произошло workplan_delete.py
-1 Удаление плана произошло workplan_delete.py
-1 Удаление плана произошло workplan_delete.py
-0 Удаление плана не произошло workplan_delete.py
+1 Заявка на биржу успешно создана shiftexchrequest_add.py
+1 Откли на биржу успешно создался shiftexchrequest_create_respond.py
+1 Подтверждение выхода по заявки на биржу произошло shiftexchrequest_confirm_request.py
+1 Отмена отклика на биржу произошло shiftexchrespond_cancel_respond.py
+1 Удаление заявки на биржу произошло shiftexchrequest_delete.py
+1 Импорт заявки на биржу произошел shiftexchrequest_import.py
+1 Отмена заявки на биржу успешно произошла shiftexchrequest_cancel_request.py
+1 Удаление заявки на биржу произошло shiftexchrequest_delete.py
+1 Заявка на биржу успешно создана shiftexchrequest_add.py
+1 Откли на биржу успешно создался shiftexchrequest_create_respond.py
+1 Подтверждение неявки по заявки на биржу произошло shiftexchrequest_confirm_absence.py
+1 Удаление отклика на биржу произошло shiftexchrespond_delete.py
+1 Заявка на биржу успешно создана shiftexchrequest_add.py
+1 Откли на биржу успешно создался shiftexchrequest_create_respond.py
+1 Изменение сотрудника в отклике произошло shiftexchrespond_change_user.py
+1 Аустсор агенство добавлено agencyoutsource_add.py
+1 Удаление аутсорс агенства произошло agencyoutsource_delete.py
+1 Режим работы создался workregime_add.py
+1 Режим работы удалился workregime_delete.py
+1 Календарь по режимам работы создался workerday_add.py
+1 Импорт календарь по режимам работы создался workerday_import.py
+1 Планирование добавлено workplan_add.py
+1 Планирование утверждено workplan_confirm.py
+1 Удаление планирования произошло workplan_delete.py
+1 Занятость по дням создалась workperiod_add.py
+1 Импорт занятости по дням создалась workperiod_import.py
+1 Удаление занятости по дням произошло workperiod_delete.py
+1 Тип отсутсвия создался absencetype_add.py
+0 Отсутсвие не создалось absence_add.py
+0 Отсутсвие не создалось absence_add.py
+0 Отсутсвие не создалось absence_add.py
+1 Отсутсвие создалось absence_add.py

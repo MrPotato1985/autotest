@@ -24,6 +24,12 @@ subprocess.run(["python", "workerday_import.py"]) #Импорт календар
 subprocess.run(["python", "workplan_add.py"]) #Добавление планирования
 subprocess.run(["python", "workplan_confirm.py"]) #Утверждение планирования
 subprocess.run(["python", "workplan_delete.py"]) #Удаление планирования
+subprocess.run(["python", "workperiod_add.py"]) #Добавление занятости по дням
+subprocess.run(["python", "workperiod_import.py"]) #Импорт занятости по дням
+subprocess.run(["python", "workperiod_delete.py"]) #Удаление занятости по дням
+subprocess.run(["python", "absencetype_add.py"]) #Добавление типа отсутсвия
+subprocess.run(["python", "absence_add.py"]) #Добавление отсутсвия
+
 
 
 
