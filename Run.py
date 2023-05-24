@@ -39,3 +39,7 @@ subprocess.run(["python", "budgetfot_import.py"]) #импорт лимита Ф�
 subprocess.run(["python", "worktimefund_add.py"]) #Добавление  ФРВ по ТТ
 subprocess.run(["python", "worktimefund_delete.py"]) #Удаление ФРВ по ТТ
 subprocess.run(["python", "worktimefund_import.py"]) #импорт ФРВ по ТТ
+subprocess.run(["python", "additionalstaffagreement_add.py"]) #Добавление Доп. часы по ТТ
+subprocess.run(["python", "additionalstaffagreement_delete.py"]) #Удаление Доп. часы по ТТ
+subprocess.run(["python", "worktimeschedulelimits_add.py"]) #Добавление правила и ограничения
+subprocess.run(["python", "worktimeschedulelimits_delete.py"]) #Удаление правила и ограничения
