@@ -1,4 +1,4 @@
-#Добавление режима работы
+#удаление бюджета фот
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import datetime
@@ -29,24 +29,25 @@ try:
     #Нажимаем планирование графиков
     browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
      
-    #Нажимаем на режим работы
-    browser.find_element(By.LINK_TEXT, "Режимы работы").click()
+    #Нажимаем на Лимит ФОТ по ТТ
+    browser.find_element(By.LINK_TEXT, "Лимит ФОТ по ТТ").click()
 
-    #нажимаем на кнопку добавить режим работы
-    browser.find_element(By.CLASS_NAME, "btn.btn-success").click()
-    
-    #вводим название режима работы
-    browser.find_element(By.ID, "id_title").send_keys("5-2")
+    #нажимаем на одно из лимитов ФОТ
+    browser.find_element(By.XPATH, "//a[contains(@href, '/admin/stafflist/budgetfot/') and contains(@href, '/change')]").click()
 
-    #вводим код режима работы
-    browser.find_element(By.ID, "id_regime_code").send_keys("52")
+    #переходим на новое окно
+    browser.switch_to.window(browser.window_handles[1])
     
-    #нажимаем на кнопку сохранить
-    browser.find_element(By.CLASS_NAME, "btn.btn-high.btn-info").click()
+    #Нажимаем удалить лимит ФОТ
+    browser.find_element(By.CLASS_NAME, "text-error.deletelink").click()
+
+    #Нажимаем подтверждение удаления
+    browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
+    
     
     
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Режим работы не создался")
+    funciones.agregar_archivo("test.txt", "\n0 Удаление лимита ФОТ не произошло")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Режим работы создался")
+    funciones.agregar_archivo("test.txt", "\n1 Удаление лимита ФОТ произошло")

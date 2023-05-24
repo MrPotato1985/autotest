@@ -29,7 +29,13 @@ subprocess.run(["python", "workperiod_import.py"]) #Импорт занятос�
 subprocess.run(["python", "workperiod_delete.py"]) #Удаление занятости по дням
 subprocess.run(["python", "absencetype_add.py"]) #Добавление типа отсутсвия
 subprocess.run(["python", "absence_add.py"]) #Добавление отсутсвия
-
-
-
-
+subprocess.run(["python", "absence_import.py"]) #Импорт отсутсвия
+subprocess.run(["python", "absence_delete.py"]) #Удаление отсутсвия
+subprocess.run(["python", "presencetype_add.py"]) #Добавление типа присутсвия
+subprocess.run(["python", "presencetype_delete.py"]) #Удаление типа присутсвия
+subprocess.run(["python", "budgetfot_add.py"]) #Добавление лимит ФОТ
+subprocess.run(["python", "budgetfot_delete.py"]) #Удаление лимита ФОТ
+subprocess.run(["python", "budgetfot_import.py"]) #импорт лимита ФОТ
+subprocess.run(["python", "worktimefund_add.py"]) #Добавление  ФРВ по ТТ
+subprocess.run(["python", "worktimefund_delete.py"]) #Удаление ФРВ по ТТ
+subprocess.run(["python", "worktimefund_import.py"]) #импорт ФРВ по ТТ

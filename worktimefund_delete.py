@@ -1,4 +1,4 @@
-#Добавление режима работы
+#Удаление ФРВ по ТТ
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import datetime
@@ -29,24 +29,23 @@ try:
     #Нажимаем планирование графиков
     browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
      
-    #Нажимаем на режим работы
-    browser.find_element(By.LINK_TEXT, "Режимы работы").click()
+    #Нажимаем на ФРВ по ТТ
+    browser.find_element(By.LINK_TEXT, "ФРВ по ТТ").click()
 
-    #нажимаем на кнопку добавить режим работы
-    browser.find_element(By.CLASS_NAME, "btn.btn-success").click()
-    
-    #вводим название режима работы
-    browser.find_element(By.ID, "id_title").send_keys("5-2")
+    #нажимаем на один ФРВ по тт
+    browser.find_element(By.XPATH, "//a[contains(@href, '/worktimeschedule/worktimefund/') and contains(@href, '/change')]").click()
 
-    #вводим код режима работы
-    browser.find_element(By.ID, "id_regime_code").send_keys("52")
+    #переходим на новое окно
+    browser.switch_to.window(browser.window_handles[1])
+
+    #нажимаем на кнопку ФРВ по ТТ
+    browser.find_element(By.CLASS_NAME, "text-error.deletelink").click()
     
-    #нажимаем на кнопку сохранить
-    browser.find_element(By.CLASS_NAME, "btn.btn-high.btn-info").click()
-    
+    #Подтверждаем удаление
+    browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
     
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Режим работы не создался")
+    funciones.agregar_archivo("test.txt", "\n0 ФРВ по ТТ не удалился")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Режим работы создался")
+    funciones.agregar_archivo("test.txt", "\n1 ФРВ по ТТ удалился")

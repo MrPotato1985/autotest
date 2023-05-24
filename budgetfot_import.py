@@ -1,4 +1,5 @@
-#импорт занятости по дням
+#Импорт бюджета ФОТ
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import datetime
@@ -30,23 +31,25 @@ try:
     #Нажимаем планирование графиков
     browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
      
-    #Нажимаем на занятость по дням
-    browser.find_element(By.LINK_TEXT, "Занятость по дням").click()
+    #Нажимаем на Лимит ФОТ по ТТ
+    browser.find_element(By.LINK_TEXT, "Лимит ФОТ по ТТ").click()
 
     #Нажимаем на Импорт
     browser.find_element(By.LINK_TEXT, "Импорт").click()
-    
+
     current_dir = os.path.abspath(os.path.dirname(__file__))    # получаем путь к директории текущего исполняемого файла 
-    file_path = os.path.join(current_dir, 'WorkPeriod_template.xlsx')
+    file_path = os.path.join(current_dir, 'BudgetFot_template.xlsx')
     
     #Добавляем файл
     browser.find_element(By.ID, "id_import_file").send_keys(file_path)
 
     #Нажимаем кнопку импорт
     browser.find_element(By.CLASS_NAME, "btn.btn-info").click()
+    
+    #Если импорт успешен то пишем это в файл и наоборот. Смотрю по появлению алерта что заявка добавлена
 
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Импорт занятости по дням не создалась")
+    funciones.agregar_archivo("test.txt", "\n0 Импорт лимита ФОТ не произошел")
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Импорт занятости по дням создалась")
+    funciones.agregar_archivo("test.txt", "\n1 Импорт лимита ФОТ произошел")
