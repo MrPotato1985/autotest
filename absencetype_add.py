@@ -55,6 +55,7 @@ try:
     #Нажимаем на кнопку сохранить
     browser.find_element(By.CLASS_NAME, "btn.btn-high.btn-info").click()
 
+    time.sleeps(10)
 
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:

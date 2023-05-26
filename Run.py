@@ -19,6 +19,7 @@ subprocess.run(["python", "agencyoutsource_add.py"]) #Добавление ау�
 subprocess.run(["python", "agencyoutsource_delete.py"]) #Удаление аутсорс агенства
 subprocess.run(["python", "workregime_add.py"]) #Добавление режима работы
 subprocess.run(["python", "workregime_delete.py"]) #Удаление режима работы
+subprocess.run(["python", "workregime_add.py"]) #Добавление режима работы
 subprocess.run(["python", "workerday_add.py"]) #Добавление календаря по режимам работы
 subprocess.run(["python", "workerday_import.py"]) #Импорт календаря по режимам работы
 subprocess.run(["python", "workplan_add.py"]) #Добавление планирования
