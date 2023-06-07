@@ -58,5 +58,6 @@ try:
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
     funciones.agregar_archivo("test.txt", "\n0 Доп. часы по ТТ не создался")
+    funciones.capture_screenshot()
 else:
     funciones.agregar_archivo("test.txt", "\n1 Доп. часы по ТТ создался")

@@ -49,19 +49,21 @@ try:
 
     #Добавляем дату начала заявки
     now = datetime.datetime.now()
-    tomorrow = now + datetime.timedelta(days=2)
+    tomorrow = now + datetime.timedelta(days=0)
     browser.find_element(By.ID, "id_start_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
+    now_time = now + datetime.timedelta(seconds=5)
     #Добавляем время начала заявки
-    browser.find_element(By.ID, "id_start_date_1").send_keys("14:00:00")
+    browser.find_element(By.ID, "id_start_date_1").send_keys(now_time.strftime("%H:%M:%S"))
 
     #Добавляем дату окончания заявки
     now = datetime.datetime.now()
-    tomorrow = now + datetime.timedelta(days=2)
+    tomorrow = now + datetime.timedelta(days=0)
     browser.find_element(By.ID, "id_end_date_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
+    now_time = now + datetime.timedelta(seconds=30)
     #Добавляем время окончания заявки
-    browser.find_element(By.ID, "id_end_date_1").send_keys("14:30:00")
+    browser.find_element(By.ID, "id_end_date_1").send_keys(now_time.strftime("%H:%M:%S"))
 
     #Добавляем описания
 
@@ -76,6 +78,7 @@ try:
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
     funciones.agregar_archivo("test.txt", "\n0 Заявка на биржу не создана")
+    funciones.capture_screenshot()
 else:
     funciones.agregar_archivo("test.txt", "\n1 Заявка на биржу успешно создана")
 

@@ -47,5 +47,6 @@ try:
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
     funciones.agregar_archivo("test.txt", "\n0 Подтверждение неявки по заявки на биржу не произошло")
+    funciones.capture_screenshot()
 else:
     funciones.agregar_archivo("test.txt", "\n1 Подтверждение неявки по заявки на биржу произошло")

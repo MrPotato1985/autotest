@@ -46,5 +46,6 @@ try:
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
     funciones.agregar_archivo("test.txt", "\n0 Аутсорс агенство не добавлено")
+    funciones.capture_screenshot()
 else:
     funciones.agregar_archivo("test.txt", "\n1 Аустсор агенство добавлено")

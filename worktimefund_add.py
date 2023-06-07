@@ -64,5 +64,6 @@ try:
     browser.find_element(By.CLASS_NAME, "stat-item.item-reserve")
 except:
     funciones.agregar_archivo("test.txt", "\n0 ФРВ по ТТ не создалось")
+    funciones.capture_screenshot()
 else:
     funciones.agregar_archivo("test.txt", "\n1 ФРВ по ТТ создалось")
