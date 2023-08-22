@@ -40,6 +40,9 @@ try:
 
     #нажимаем на кнопку удалить Правила и ограничения
     browser.find_element(By.CLASS_NAME, "text-error.deletelink").click()
+
+    #Нажимаем ок на всплывашке
+    browser.switch_to.alert.accept()
     
     #Подтверждаем удаление
     browser.find_element(By.CLASS_NAME, "btn.btn-danger").click()
