@@ -1,5 +1,4 @@
-#Добавление табеля
-
+#Добавление журнала рабочего времени
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import datetime
@@ -30,53 +29,52 @@ try:
 
     #Учёт рабочего времени
     browser.find_element(By.LINK_TEXT, "Учёт рабочего времени").click()
-    #Нажимаем на табель
-    browser.find_element(By.LINK_TEXT, "Табель").click()
-    #Нажимаем на кнопку добавить табель
+    #Нажимаем на Журнал учета рабочего времени
+    browser.find_element(By.LINK_TEXT, "Журнал учета рабочего времени").click()
+    
+    #Нажимаем на кнопку добавить журнал учета рабочего времени
     browser.find_element(By.CLASS_NAME, "btn.btn-success").click()
 
     #Добавляем сотрудника
-    browser.find_element(By.ID, "select2-id_employee-container").click()
+    browser.find_element(By.ID, "select2-id_user-container").click()
     browser.find_element(By.CLASS_NAME, "select2-search__field").send_keys("Феськов")
     browser.find_element(By.CLASS_NAME, "select2-results__option.select2-results__option--highlighted").click()
 
     #Добавляем точку
-    point = browser.find_element(By.ID, "select2-id_point-container")
-    point.click()
+    browser.find_element(By.ID, "select2-id_point-container").click()
     browser.find_element(By.CLASS_NAME, "select2-search__field").send_keys("Стофато")
     browser.find_element(By.CLASS_NAME, "select2-results__option.select2-results__option--highlighted").click()
 
-    #Добавляем дату табеля
+    #Добавляем дату прихода
     now = datetime.datetime.now()
-    tomorrow = now + datetime.timedelta(days=0)
-    browser.find_element(By.ID, "id_day").send_keys(tomorrow.strftime("%d.%m.%Y"))
-
-    #Заполняем отментку
-    select = Select(browser.find_element(By.ID, "id_mark"))
-    select.select_by_value("0")
-
-    #Заполняем тип присутсвия
-    select = Select(browser.find_element(By.ID, "id_presence_type"))
-    select.select_by_visible_text("Основная работа")
+    tomorrow = now + datetime.timedelta(days=-1)
+    browser.find_element(By.ID, "id_income_last_update_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
     
-    #Добавляем время начала 
-    browser.find_element(By.ID, "id_start_time_cred").send_keys("09:00:00")
+    #Добавляем время прихоода
+    browser.find_element(By.ID, "id_income_last_update_1").send_keys("09:00:00")
 
-    #Добавляем время конец 
-    browser.find_element(By.ID, "id_end_time_cred").send_keys("18:00:00")
+    #Добавляем дату ухода
+    now = datetime.datetime.now()
+    tomorrow = now + datetime.timedelta(days=-1)
+    browser.find_element(By.ID, "id_outcome_last_update_0").send_keys(tomorrow.strftime("%d.%m.%Y"))
 
+    
+    #Добавляем время ухода
+    browser.find_element(By.ID, "id_outcome_last_update_1").send_keys("18:00:00")
+
+    
     #нажимаем сохранить
     browser.find_element(By.NAME, "_save").click()
 
-    #Если табель создан пишем это в файл и наоборот. Смотрю по появлению алерта что заявка добавлена
+    #Если журнал учета не создан пишем это в файл и наоборот. Смотрю по появлению алерта что заявка добавлена
 
     browser.find_element(By.CLASS_NAME, "alert.alert-success")
 except:
-    funciones.agregar_archivo("test.txt", "\n0 Табель не создан")
+    funciones.agregar_archivo("test.txt", "\n0 Добавление журнала рабочего времени не произошло")
     funciones.capture_screenshot()
 else:
-    funciones.agregar_archivo("test.txt", "\n1 Табель создан")
+    funciones.agregar_archivo("test.txt", "\n1 Добавление журнала рабочего времени произошло")
 
 
 

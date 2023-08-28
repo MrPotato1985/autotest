@@ -43,7 +43,7 @@ try:
     #нажимаем Утвердить
     browser.find_element(By.NAME, "index").click()
 
-    #Нажимаем на запись чекбох
+    #Смотри поменялась ли галочка на утвержден в поле утвержден
     elem = browser.find_element(By.XPATH, '//*[@id="result_list"]/tbody/tr/td[14]/img')
     assert(elem.get_attribute("alt") == "True")  
     
