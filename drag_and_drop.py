@@ -37,7 +37,7 @@ for cell in calendar_cells:
         target_cell = cell
         break
 
-time.sleep(5)
+
 action_chains.move_to_element(target_cell).release().perform()
 
 

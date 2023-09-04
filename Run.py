@@ -53,7 +53,7 @@ subprocess.run(["python", "shiftexchrequest_add_without_plan.py"]) #провер
 subprocess.run(["python", "workplan_add_for_andrew3.py"]) #создание плана для подписчика andrew3
 subprocess.run(["python", "shiftexchrequest_add_with_bid.py"]) #Создание заявки на биржу со ставкой вручную
 subprocess.run(["python", "сheck_shiftexchrequest_has_not_been_deleted.py"]) #Тест при проставлении отсутсвия заявка по которой был отклик в бирже не удаляеться из занятости по дням, время высвобождаеться, в занятости по дням проставляеться тип отсуствия
-
+subprocess.run(["python", "сannot_set_scheduling_if_there_is_an_absence.py"]) #Тест проверка, что нельзя проставить сены через планирование и занятость, если есть отсутсвие по точке
 
 subprocess.run(["python", "timesheet_add.py"]) #Добавление табеля
 subprocess.run(["python", "timesheet_import.py"]) #Импорт табеля
