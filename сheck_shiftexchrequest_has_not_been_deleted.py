@@ -111,12 +111,18 @@ try:
 
     #Нажимаем планирование графиков
     browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
-     
+
+    time.sleep(20) 
+    
     #Нажимаем на занятость по дням
     browser.find_element(By.LINK_TEXT, "Занятость по дням").click()
 
     #Находи отгул и проверяем таким образом если он
     otgul = browser.find_element(By.LINK_TEXT, "Отгул")
+
+    
+
+    #Тест может не сработать так как тут фоновая и отгул может не появиться сразу ()
 
     
 except:
