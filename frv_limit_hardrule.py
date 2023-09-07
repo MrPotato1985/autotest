@@ -60,7 +60,7 @@ try:
     browser.get(link)
                                                  
     WebDriverWait(browser, 40).until(presence_of_element_located((By.CSS_SELECTOR, "#calendar")))
-    fio_element = browser.find_element(By.XPATH, "//div[starts-with(@id, 'user_48167')]") #впиши id юзера
+    fio_element = browser.find_element(By.XPATH, "//div[starts-with(@id, 'user_48147')]") #впиши id юзера
     calendar_cells = browser.find_elements(By.CSS_SELECTOR, "td.fc-day")
     #calendar_cells = driver.find_elements(By.CSS_SELECTOR, "td.fc-day.fc-widget-content.fc-tue")
 

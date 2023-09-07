@@ -103,7 +103,7 @@ try:
     #переходим на новое окно
     browser.switch_to.window(browser.window_handles[2])
                                                 
-    elem = browser.find_element(By.XPATH, '//*[@id="plan-stat-summary"]/div[2]/div[2]/span[1]')                                
+    elem = browser.find_element(By.XPATH, '//*[@id="plan-stat-summary"]/div[4]/div[2]/span[1]')                                
     elem1 = int(elem.text)
     assert elem1 == 0  
 
@@ -111,8 +111,6 @@ try:
 
     #Нажимаем планирование графиков
     browser.find_element(By.LINK_TEXT, "Планирование графиков").click()
-
-    time.sleep(20) 
     
     #Нажимаем на занятость по дням
     browser.find_element(By.LINK_TEXT, "Занятость по дням").click()

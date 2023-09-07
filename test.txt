@@ -1,0 +1,9 @@
+
+1 Тест прошел успешно frv_limit_easyrule.py
+1 Тест прошел успешно frv_limit_easyrule.py
+1 Тест прошел успешно frv_limit_hardrule.py
+0 Тест не прошел сheck_shiftexchrequest_has_not_been_deleted.py
+0 Тест не прошел сheck_shiftexchrequest_has_not_been_deleted.py
+0 Тест не прошел fortest.py
+0 Тест не прошел fortest.py
+1 Тест прошел успешно fortest.py
