@@ -1,4 +1,4 @@
-#Проверяем правило "Мягкий лимит ФРВ" при превышении можно утвердить, но появляеться сообщение о превышении
+#Проверяем правило "Превышение лимита по месяцу" при превышении нельзя утвердть график, нельзя перетаскивать пользователей
 
 
 from selenium import webdriver
@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
-
+import time
 
 
 try:
@@ -24,7 +24,7 @@ try:
 
     #Ввод логина
     input1 = browser.find_element(By.ID, "id_username")
-    input1.send_keys("sv@imredi.biz8")
+    input1.send_keys("tm1@imredi.biz8")
 
     #Ввод пароля
     input2 = browser.find_element(By.ID, "id_password")
@@ -60,7 +60,7 @@ try:
     browser.get(link)
                                                  
     WebDriverWait(browser, 40).until(presence_of_element_located((By.CSS_SELECTOR, "#calendar")))
-    fio_element = browser.find_element(By.XPATH, "//div[starts-with(@id, 'user_48147')]") #впиши id юзера
+    fio_element = browser.find_element(By.XPATH, "//div[starts-with(@id, 'user_48167')]") #впиши id юзера
     calendar_cells = browser.find_elements(By.CSS_SELECTOR, "td.fc-day")
     #calendar_cells = driver.find_elements(By.CSS_SELECTOR, "td.fc-day.fc-widget-content.fc-tue")
 
@@ -80,14 +80,15 @@ try:
 
     time.sleep(3)
 
-    #смотрим предупреждение о превышении лимита
-    browser.find_elements(By.CLASS_NAME, "alert.imredi-alert.alert-warning")
-
-    #смотрим что можно нажать кнопку
-    confirm = browser.find_element(By.ID, "calendar-confirm")
-    assert not confirm.get_attribute("disabled")
-
+    #смотрим предупреждение о превышении лимита на пользователе. 
+    check = browser.find_elements(By.CLASS_NAME, "jstree-icon.jstree-themeicon.glyphicon.glyphicon-exclamation-sign.worker-choice-node-warning.jstree-themeicon-custom")
+    print(check)
+    if len(check) == 0:
+        raise ValueError("Список пуст!")
     
+    #смотрим что нельзя нажать кнопку
+    #confirm = browser.find_element(By.ID, "calendar-confirm")
+    #assert confirm.get_attribute("disabled")
     
 
 

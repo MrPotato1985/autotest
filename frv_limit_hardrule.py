@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
-import time
+
 
 
 try:
@@ -21,6 +21,8 @@ try:
     browser = webdriver.Chrome()
     browser.implicitly_wait(10)
     browser.get(link)
+    
+    
 
     #Ввод логина
     input1 = browser.find_element(By.ID, "id_username")
@@ -58,6 +60,7 @@ try:
     tomorrow = now + datetime.timedelta(days=1)
 
     browser.get(link)
+    browser.fullscreen_window()
                                                  
     WebDriverWait(browser, 40).until(presence_of_element_located((By.CSS_SELECTOR, "#calendar")))
     fio_element = browser.find_element(By.XPATH, "//div[starts-with(@id, 'user_48147')]") #впиши id юзера
@@ -68,6 +71,8 @@ try:
     action_chains = ActionChains(browser)
     action_chains.click_and_hold(fio_element).perform()
     time.sleep(5)
+
+    browser.execute_script("window.scrollTo(0, 1080)")
 
     # Найдем координаты целевой ячейки и выполнием drop
     for cell in calendar_cells:
@@ -81,7 +86,7 @@ try:
     time.sleep(3)
 
     #смотрим предупреждение о превышении лимита
-    browser.find_elements(By.CSS_SELECTOR, "alert.imredi-alert.alert-warning")
+    browser.find_elements(By.CLASS_NAME, "alert.imredi-alert.alert-warning")
 
     #смотрим что нельзя нажать кнопку
     confirm = browser.find_element(By.ID, "calendar-confirm")
